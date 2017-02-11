@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lista>
+    <lista>
+        <baza>Krem_orzechowy</baza>
+        <cena>19.0</cena>
+        <czas>Od_zaraz</czas>
+        <id>1</id>
+        <ilosc>11</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/rureczka_552ab0b2374ed.jpg</img>
+        <opis>Krucheę_rureczki wypełnione_maślanym kremem orzechowym. Każde ciasteczko pakowane w ozdobną papilotkę. Długość rureczki około 6 cm.</opis>
+        <title>Rureczki_Orzechowe</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>2</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/eklerek_552bedad5eb84.jpg</img>
+        <opis>Maleńkie eklerki wypełnione maślanym  kremem śmietankowym z alkoholem. Każde ciasteczko pakowane w ozdobną papilotkę.</opis>
+        <title>Eklerki</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>3</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/kuleczka_552bef56aeb70.jpg</img>
+        <opis>Trufelki z kokosem i alkoholem. Każde ciasteczko pakowane w ozdobną papilotkę. Wielkość ciasteczka 2.5 cm.</opis>
+        <title>Trufelki z kokosem</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>4</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/roladka_552bf1b14ef96.jpg</img>
+        <opis>Waflowe roladki o smaku czekoladowo-kokosowym. Każde ciasteczko zapakowane w papilotkę.</opis>
+        <title>Roladki waflowe</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>5</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/torcik_552bf2f8a2bef.jpg</img>
+        <opis>Maleńki biszkoptowy torcik z maślanym kremem czekoladowo-orzechowym. Każde ciasteczko jest pakowane w ozdobną papilotkę Rozmiar ciasteczka 6cm na1,5 cm,</opis>
+        <title>Torcik</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>6</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/trojkacik._552d076712d50.jpg</img>
+        <opis>Czekoladowe biszkopciki i mus owocowy otoczony  śnieżnobiałą masą cukrową. Każde ciasteczko pakowane w ozdobną papilotkę. Wymiar ciasteczka 5 cm na 4 cm</opis>
+        <title>Trójkąciki owocowe</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>7</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/babeczka_552d0b4f26471.jpg</img>
+        <opis>Maleńkie babeczki z waniliowym kremem budyniowym z migdałami na kruchym cieście. Każde ciasteczko jest pakowane w ozdobną papilotkę. Rozmiar babeczki 2.5 cm</opis>
+        <title>Babeczki waniliowe</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>8</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/snobinetka_552bec9f7b5c9.jpg</img>
+        <opis>Czekoladowa miseczka wypełniona wiśniami i kremem czekoladowym. Każde ciasteczko pakowane w ozdobną papilotkę.</opis>
+        <title>Wisienki</title>
+    </lista>
+    <lista>
+        <baza>Krem orzechowy</baza>
+        <cena>18.0</cena>
+        <czas>Od zaraz</czas>
+        <id>9</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/piramidka_czekoladowa_552bf0d58a38b.jpg</img>
+        <opis>Jak praliny z prawdziwej belgijskiej czekolady z nadzieniem adwokatowym i wiśnią. Każde ciasteczko pakowane w papilotkę.</opis>
+        <title>Piramidki czekoladowe </title>
+    </lista>
+</lista>

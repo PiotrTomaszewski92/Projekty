@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>81.0</cena>
+        <czas>5 dni</czas>
+        <id>1</id>
+        <ilosc>11</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/pisanka_5592d579abe96.jpg</img>
+        <opis>Ozdobna_czekoladowa pisanka wypełniona biszkoptami i musem na bazie bitej śmietany . Tort przeznaczony na 10 porcji. Wybierz smak i zamów bezpłatny napis.</opis>
+        <title>Tort Pisanka</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>82.0</cena>
+        <czas>3 dni</czas>
+        <id>0</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/sloneczniki._5592d2f796812.jpg</img>
+        <opis>Słoneczniki i pszczółki. Tort w wersji podstawowej na 10 porcji. Całość wykończona w kremie śmietankowym. Słoneczniki i pszczółki wykonane z masy cukrowej. Wybierz smak i wielkość tortu.</opis>
+        <title>Tort Słoneczniki</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>86.0</cena>
+        <czas>5 dni</czas>
+        <id>0</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/kaktus_1_5592e78c196d3.jpg</img>
+        <opis>Słodka roślinka z kolcami. Tort w wersji podstawowej przeznaczony na 10 osób. Doniczka z tworzywa , kaktus  do zjedzenia, barwnik zewnętrznej wartwy tortu ( zieleń) wpływa na smak tortu. Wybierz smak.</opis>
+        <title>Tort Kaktus</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>87.0</cena>
+        <czas>5 dni</czas>
+        <id>0</id>
+        <ilosc>12</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/serce_z_szarfa._552d59fbca9f5.jpg</img>
+        <opis>Serce z serduszkami i szarfą na napis. Całość wykończona w masie cukrowej, Wybierz wielkość i smak.</opis>
+        <title>Tort Serce</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>87.0</cena>
+        <czas>3 dni</czas>
+        <id>0</id>
+        <ilosc>16</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/tort_krowka_55917e0243664.jpg</img>
+        <opis>Sielska łączka z krówką. Tort w wersji podstawowej na 12 osób, średnica 20 cm. Całość wykonana w masie cukrowej, wybierz smak, wielkość i bezpłatny napis.</opis>
+        <title>Tort Krówka</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>87.0</cena>
+        <czas>3 dni</czas>
+        <id>0</id>
+        <ilosc>12</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/koszula_55b66e3f4f834.jpg</img>
+        <opis>Elegancka koszula męska.Tort w wersji podstawowej na 12 osób. Wybierz smak, wielkość i kolory koszuli i krawata oraz bezpłatny napis na torcie.</opis>
+        <title>Tort Koszula</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>98.0</cena>
+        <czas>3 dni</czas>
+        <id>0</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/serce_1_5592d4028c302.jpg</img>
+        <opis>Czerwone serce z dedykacją. Tort w wersji podstawowej na 10 osób. Całość wykonana w masie cukrowej, wybierz smak, wielkość i bezpłatny napis.</opis>
+        <title>Tort Czerwone serce nr 1</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>98.0</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>12</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/raj_swinek._5592d08faa26c.jpg</img>
+        <opis>Czekoladowe błotko to jest to ! Tort w wersji podstawowej na 12 osób otoczony czekoladowymi pałeczkami i ozdobiony wstążką. Wybierz smak, wielkość i bezpłatny napis.</opis>
+        <title>Tort Raj Świnek</title>
+    </lista>
+    <lista>
+        <baza>truskawka-wanilia</baza>
+        <baza>sernik-pomarańcza</baza>
+        <baza>jagoda-wanilia</baza>
+        <baza>tiramisu</baza>
+        <baza>czekolada-cappuccino</baza>
+        <baza>czekolada-banan</baza>
+        <cena>94.0</cena>
+        <czas>3 dni</czas>
+        <id>0</id>
+        <ilosc>10</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/prezent1_5592ce54cb73c.jpg</img>
+        <opis>Jaka niespodzianka w środku? Dekoracja wykonana w masie cukrowej. Tort w wersji podstawowej przeznaczony dla 10 osób. Wybierz kolor dekoracji ( tła), smak i wielkość tortu. Zamów bezpłatny napis na torcie.</opis>
+        <title>Tort Prezent</title>
+    </lista>
+</lista>

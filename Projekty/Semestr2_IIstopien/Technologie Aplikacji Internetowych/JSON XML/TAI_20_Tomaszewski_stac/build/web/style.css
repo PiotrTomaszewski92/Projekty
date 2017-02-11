@@ -1,0 +1,111 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-12-19, 16:48:56
+    Author     : Procislaw
+*/
+
+.large-7 {
+    width: 100% !important;
+}
+
+nav ul li, footer ul li{
+    text-align: center;
+    border: none !important;
+}
+
+nav ul li::after, footer ul li::after{
+    border: none !important;
+    
+}
+
+nav ul li:hover, footer ul li:hover{
+   /* background-color:#ffffff;*/
+    
+}
+
+body{
+    background-color: #b3c10e !important;
+    font-family:  'Courgette', cursive !important;
+}
+
+h1{
+    text-align: center;
+    color: #397a09 !important;
+} 
+
+#cont{
+    width:70%;
+    margin:auto;
+    -webkit-box-shadow: 0px -1px 46px 2px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px -1px 46px 2px rgba(0,0,0,0.56);
+    box-shadow: 0px -1px 46px 2px rgba(0,0,0,0.56);
+    padding: 2em;
+    background-color: rgba(255,255,255,0.5);
+    min-height:400px;
+}
+
+.bg-danger{
+    padding:10px;
+    text-align: center;
+    color: red;
+}
+
+.bg-success{
+    padding:10px;
+    width:100%;
+    text-align: center;
+    color:green;
+}
+
+.btn-success{
+    width:100%;
+    
+}
+
+.btn-success a {
+    color: #fff;
+}
+
+.btn-danger{
+    margin:auto;
+}
+
+.btn-danger a{
+    color: #fff;
+}
+
+.lewa{
+    float: left;    
+}
+.lewa img{
+    width:300px;
+}
+
+.prawa{
+    text-align: left;
+    width: 500px;
+    float: right;
+}
+
+hr::after{
+    background-color: #dae086 !important;
+    
+}
+
+hr{
+    border-top: 1px solid #0d2e09 !important;
+}
+
+.form_login{
+    width:30%;
+    margin: 20px auto;
+    
+}
+
+footer{
+    text-align:center;
+}

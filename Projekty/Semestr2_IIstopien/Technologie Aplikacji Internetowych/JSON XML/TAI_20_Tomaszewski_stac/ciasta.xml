@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lista>
+    <lista>
+        <baza>marmolada - karmel</baza>
+        <baza>orzech włoski - karmel</baza>
+        <cena>6.89</cena>
+        <czas>5 dni</czas>
+        <id>1</id>
+        <ilosc>11</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/rogaliki_z_orzeszkiem_557aaa73686e1.jpg</img>
+        <opis>Krucho-drożdżowe_rogaliki_z marmoladką i orzechem włoskim, delikatnie oprószone cukrem pudrem. Rogaliki zapakowane w celofanową torebkę - waga 0,20 kg</opis>
+        <title>Rogaliki_z_orzeszkiem</title>
+    </lista>
+    <lista>
+        <baza>jabłka z cynamonem</baza>
+        <cena>12.0</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>4</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/szarlotka_557aa6b8c4144.jpg</img>
+        <opis>Pyszne wilgotne, kwaskowe jabłka z delikatną nutka cynamonu zamknięte między dwoma warstwami delikatnego ciasta kruchego. 4 sztuki ciasta, każde wielkości 6*6 cm.</opis>
+        <title>Szarlotka</title>
+    </lista>
+    <lista>
+        <baza>czekolada z bitą śmietaną</baza>
+        <cena>16.0</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>4</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/czarny_las_55796f92c19a7.jpg</img>
+        <opis>Bita śmietana z wisienkami z alkoholu oraz czekoladowe wilgotne ciasto. Pychotka !  Cena za 4 sztuki ciasta, każde wielkości 6*6 cm</opis>
+        <title>Ciastko Czarny Las</title>
+    </lista>
+    <lista>
+        <baza>orzechy laskowe</baza>
+        <baza>suszone śliwkii morele</baza>
+        <baza>skórka pomarańczy</baza>
+        <baza>rodzynki</baza>
+        <cena>17.6</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>1</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/keks_krolewski._557aa840540af.gif</img>
+        <opis>Pyszny keks królewski z dodatkiem bakalii: orzechów laskowych,suszonych śliwek i moreli, skórki pomarańczowej i rodzynek. Waga 0,80 kg. Wymiary 22*8,5 </opis>
+        <title>Keks królewski</title>
+    </lista>
+    <lista>
+        <baza>bakalie</baza>
+        <baza>owoce kandyzowane</baza>
+        <baza></baza>
+        <cena>16.0</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>4</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/kruszon_557aa786eeb11.jpg</img>
+        <opis>Niebanalne w smaku, o ciekawej strukturze ciasto. Bakalie, owoce kandyzowane na kruchym cieście wykończone pianką kokosową i kruszonką. 4 sztuki ciasta, każde wielkości 6*6 cm.</opis>
+        <title>Ciastko Kruszon 4 sztuki</title>
+    </lista>
+    <lista>
+        <baza>brzoskwinie</baza>
+        <baza>posypka kokosowa</baza>
+        <cena>16.0</cena>
+        <czas>4dni</czas>
+        <id>0</id>
+        <ilosc>4</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/sernik_z_brzoskwiniami_557975cd49b87.jpg</img>
+        <opis>Wilgotny sernik wypiekany z serków homogenizowanych na kruchym cieście, z brzoskwiniami i posypką kokosową.Cena za 4 sztuki ciastka, każde wielkości 6*6 cm.</opis>
+        <title>Sernik z brzoskwiniami</title>
+    </lista>
+    <lista>
+        <baza>waniliowy</baza>
+        <baza>makowy</baza>
+        <baza>czekoladowy</baza>
+        <cena>27.0</cena>
+        <czas>4 dni</czas>
+        <id>0</id>
+        <ilosc>4</ilosc>
+        <img>https://www.tortydladzieci.pl/pics/_produkty/muffiny_z_logo_557aac90df7c4.jpg</img>
+        <opis>Nowość ! Wyśmienite muffiny z jadalnym nadrukiem. Na każdej muffinie możemy nadrukować dowolną grafikę, zdjęcie lub logo. Wielkość powierzchni do nadruku to koło o średnicy 6 cm. Plik w formacie jpg. prześlij w osobnym mailu na adres cukiernia@tortydladzieci.pl Wybierz smak muffiny Każda muffina zapakowana jest w woreczek celofanowy</opis>
+        <title>Muffiny z jadalnym nadrukiem 6 sztuk</title>
+    </lista>
+</lista>
