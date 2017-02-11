@@ -1,0 +1,8 @@
+CC = nvcc
+CFLAGS  = zad6.cu
+TARGET = gauss_gpu
+
+all: $(TARGET)
+
+$(TARGET): $(PROGNAME)
+	$(CC) $(CFLAGS) -o $(TARGET)

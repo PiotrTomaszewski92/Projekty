@@ -1,0 +1,92 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <device_launch_parameters.h>
+#include <cuda_runtime.h>
+
+
+//Metoda sprawdzająca liczbę argumentów wprowadzonych przy uruchomieniu skompilowanej wersji pliku
+
+
+__global__ void uzupelnij(long nMacierzy, double *d_A, double *d_B) {
+	long d_x = threadIdx.x + blockIdx.x * blockDim.x;
+	long d_y = threadIdx.y + blockIdx.y * blockDim.y;
+	long temp = d_x + nMacierzy * d_y;
+	if (d_x < nMacierzy && d_y < nMacierzy) {
+			d_A[temp] = fmodf(sinf(d_x)*d_x*d_y, 10);
+			d_B[temp] = fmodf(cosf(d_y)*(d_x + d_y), 10);
+			printf ("wątek: %dx%d - [%f,%f]\n",threadIdx.x,threadIdx.y,d_A[temp],d_B[temp]);
+	}
+}
+
+__global__ void obliczC(long nMacierzy, double *d_A, double *d_B, double *d_C) {
+	long d_x = blockIdx.x * blockDim.x + threadIdx.x;
+	long d_y = blockIdx.y * blockDim.y + threadIdx.y;
+
+	if (d_x < nMacierzy && d_y < nMacierzy) {
+		for (int i = 0; i < nMacierzy; i++) {
+			d_C[d_x + nMacierzy * d_y] += d_A[d_x + i * nMacierzy] * d_B[i + nMacierzy * d_y];
+		}
+	}
+}
+
+int main(int argc, char** argv) {
+
+	if (!argv[1])
+	{
+		printf("0 ms - brak rozmiarMacu macierzy \n");	//jesli nie to wypisuje komunikat i wychodzi z programu
+		return 0;
+	}
+
+
+	long rozmiarMac = atol(argv[1]);
+
+	//warunek sprawdzający czy wartosci argumentow nie znajduja sie poza przewidywanym przedzialem wartosci
+	if (rozmiarMac <= 1)
+	{
+		printf("0 ms - zly rozmiarMac macierzy \n");		//jesli nie to wypisuje komunikat i wychodzi z programu
+		return 0;
+	}
+
+	
+	cudaEvent_t czasStart, czasStop;
+	cudaEventCreate(&czasStart);
+	cudaEventCreate(&czasStop);
+
+	double *d_A,*d_B,*d_C,*C;
+
+	long rozmMacKwadr=sizeof(double)*rozmiarMac*rozmiarMac;
+
+
+	cudaMalloc((void**) &d_A, rozmMacKwadr);
+	cudaMalloc((void**) &d_B, rozmMacKwadr);
+	cudaMalloc((void**) &d_C, rozmMacKwadr);
+	
+
+	int rozmiarGrid = 4;
+	int rozmiarBlok = 16;
+
+	dim3 grids(rozmiarGrid, rozmiarGrid);
+	dim3 blocks(rozmiarBlok, rozmiarBlok);
+	
+	uzupelnij <<<grids, blocks>>> (rozmiarMac, d_A, d_B);
+	cudaDeviceSynchronize();
+
+	C = (double*)malloc(rozmMacKwadr);
+	
+	cudaEventRecord(czasStart, 0);
+		obliczC <<<grids, blocks>>> (rozmiarMac, d_A, d_B, d_C);
+		cudaDeviceSynchronize();
+	cudaEventRecord(czasStop, 0);
+	cudaEventSynchronize(czasStop);
+
+	cudaFree(d_A);
+	cudaFree(d_B);
+	cudaFree(d_C);
+	free(C);
+
+	float roznica;
+	cudaEventElapsedTime(&roznica, czasStart, czasStop);
+	printf("Czas: %f ms\n",(roznica*100));
+
+	return 0;
+}

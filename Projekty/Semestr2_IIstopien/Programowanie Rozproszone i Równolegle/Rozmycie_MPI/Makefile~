@@ -1,0 +1,8 @@
+CC = mpicc
+CFLAGS  = zad5.c
+TARGET = gauss_mpi
+
+all: $(TARGET)
+
+$(TARGET): $(PROGNAME)
+	$(CC) -Wall `pkg-config --cflags opencv` $(CFLAGS) -o $(TARGET) `pkg-config --libs opencv` -lm

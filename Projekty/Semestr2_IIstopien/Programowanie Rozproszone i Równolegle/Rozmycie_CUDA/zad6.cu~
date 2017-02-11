@@ -1,0 +1,95 @@
+#include <iostream>
+#include <stdio.h>
+#include <omp.h>
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+
+using namespace cv;
+using namespace std;
+
+__constant__ int maskaGPU[5][5];
+
+__global__ void rozmycie(int kanal_zdj, int sumaWag, unsigned char* zdjWe, unsigned char* zdjWy, int wysokosc, int rozmiar) {
+
+	int id = blockIdx.x * blockDim.x + threadIdx.x;
+	double piksel= 0;
+	int indeks,x,y;
+
+	while(id < wysokosc*rozmiar) {
+			for(x = 0; x < 5; x++) {
+				for(y = 0; y < 5; y++) {
+					indeks = id + ((y - 2) * rozmiar) + ((x - 2) * kanal_zdj);
+					piksel+= maskaGPU[x][y] * zdjWe[indeks];
+				}
+			}
+			zdjWy[id] = (unsigned char)(piksel/sumaWag);
+			id += blockDim.x * gridDim.x;
+			piksel = 0;
+	}
+}
+
+int sumaMaski(int maska[5][5], int x, int y, int suma){
+	for (x=0; x<5;x++){
+		for (y=0; y<5;y++){
+			suma+=maska[x][y];
+		}
+	}
+	return suma;
+}
+
+int main(int argc, char** argv ){
+
+	cudaEvent_t czas_start, czas_stop;
+	cudaEventCreate(&czas_start);
+	cudaEventCreate(&czas_stop);
+	unsigned char *zdj_gpu_we, *zdj_gpu_wy;
+
+  int maska[5][5] ={
+  	{1,1,2,1,1},
+  	{1,2,4,2,1},
+  	{2,4,8,4,2},
+  	{1,2,4,2,1},
+  	{1,1,2,1,1}
+  };
+	cudaMemcpyToSymbol(maskaGPU, &maska, sizeof(int) * 5 * 5);
+
+  if ( argc != 3 ){
+      cout << "0 ms - brak wszystkich argumentow" << endl;
+      return 0;
+  }
+
+  Mat zdj_we,zdj_wy;
+  zdj_we = imread(argv[1], CV_LOAD_IMAGE_COLOR);
+	if ( !zdj_we.data ){
+      cout <<  "0 ms - problem z ladowaniem wartosci" << endl ;
+      return 0;
+  }
+
+  zdj_wy = zdj_we.clone();
+
+	cudaMalloc(&zdj_gpu_we, zdj_we.rows*zdj_we.step*sizeof(unsigned char));
+	cudaMalloc(&zdj_gpu_wy, zdj_we.rows*zdj_we.step*sizeof(unsigned char));
+
+	cudaMemcpy(zdj_gpu_we, zdj_we.ptr(), zdj_we.rows*zdj_we.step, cudaMemcpyHostToDevice);
+
+	cudaEventRecord(czas_start, 0);
+
+	rozmycie<<<4,8>>>(zdj_we.channels(), sumaMaski(maska,0,0,0), zdj_gpu_we, zdj_gpu_wy, zdj_we.rows, zdj_we.step);
+
+	//cout<<"Kanał: "<<zdj_we.channels()<<endl;
+	cudaEventRecord(czas_stop, 0);
+	cudaEventSynchronize(czas_stop);
+	float czas = 0.0;
+	cudaEventElapsedTime(&czas, czas_start, czas_stop);
+
+	cudaDeviceSynchronize();
+
+	cudaMemcpy(zdj_wy.ptr(), zdj_gpu_wy, zdj_we.rows*zdj_we.step, cudaMemcpyDeviceToHost);
+
+	cudaFree(zdj_gpu_wy);
+	cudaFree(zdj_gpu_we);
+
+	imwrite(argv[2], zdj_wy);
+	printf("Czas: %.3f ms", czas);
+   return 0;
+}

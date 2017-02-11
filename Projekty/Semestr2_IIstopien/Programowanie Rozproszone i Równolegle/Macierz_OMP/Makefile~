@@ -1,0 +1,3 @@
+
+
+g++ -g -lm -O3 -fopenmp -Wall main.cpp -o macierz_omp

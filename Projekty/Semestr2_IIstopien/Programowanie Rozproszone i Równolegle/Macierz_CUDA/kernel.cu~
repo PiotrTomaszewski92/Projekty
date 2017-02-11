@@ -1,0 +1,111 @@
+﻿/* Programowanie Równoległe i Rozproszone
+Zadanie 3. Mnożenie macierzy - CUDA.
+Sokulski Rafał
+Zabawa Adrian
+*/
+
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+#include <cstdlib>
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+//Metoda sprawdzająca liczbę argumentów wprowadzonych przy uruchomieniu skompilowanej wersji pliku
+void checkAmountOfArguments(int argc) {
+	if (argc != 2) {
+		cout << "Zla ilosc argumentow!" << endl;
+		exit(-1);
+	}
+}
+
+//Metoda sprawdzająca poprawność wprowadzonych argumentów przy uruchomieniu skompilowanej wersji pliku
+void checkArgumentValues(int matrixSize) {
+	if (matrixSize < 1) {
+		cout << "Zla wartosc argumentu!" << endl;
+		exit(-1);
+	}
+}
+
+__global__ void putValuesIntoMatrices(int matrixSize, double *matrixA, double *matrixB) {
+	long x = blockIdx.x * blockDim.x + threadIdx.x;
+	long y = blockIdx.y * blockDim.y + threadIdx.y;
+
+	if (x < matrixSize && y < matrixSize) {
+		for (int i = 0; i < matrixSize; i++) {
+			matrixA[x + matrixSize * y] = fmodf(sinf(x)*x*y, 10);
+			matrixB[x + matrixSize * y] = fmodf(cosf(y)*(x + y), 10);
+		}
+	}
+}
+
+__global__ void calculateMultiplyMatrices(int matrixSize, double *matrixA, double *matrixB, double *matrixC) {
+	long x = blockIdx.x * blockDim.x + threadIdx.x;
+	long y = blockIdx.y * blockDim.y + threadIdx.y;
+
+	if (x < matrixSize && y < matrixSize) {
+		for (int i = 0; i < matrixSize; i++) {
+			matrixC[x + matrixSize * y] += matrixA[x + i * matrixSize] * matrixB[i + matrixSize * y];
+		}
+	}
+}
+
+int main(int argc, char** argv) {
+	checkAmountOfArguments(argc);
+
+	int matrixSize = atoi(argv[1]);
+	checkArgumentValues(matrixSize);
+	long size = sizeof(double) * matrixSize * matrixSize;
+
+	cudaDeviceProp cudaDeviceProp;
+	cudaGetDeviceProperties(&cudaDeviceProp, 0);
+	
+	long cores = cudaDeviceProp.multiProcessorCount;
+	long threads = cudaDeviceProp.maxThreadsPerMultiProcessor;
+
+	double *matrixA = NULL;
+	double *matrixB = NULL;
+	double *matrixCsrc = NULL;
+	double *matrixCdst = NULL;
+
+	cudaMalloc((void**) &matrixA, size);
+	cudaMalloc((void**) &matrixB, size);
+	cudaMalloc((void**) &matrixCsrc, size);
+	matrixCdst = (double*)malloc(size);
+
+	int sizeOfGrid = 4;
+	int sizeOfBlock = 16;
+
+	dim3 grids(sizeOfGrid, sizeOfGrid);
+	dim3 blocks(sizeOfBlock, sizeOfBlock);
+	
+	putValuesIntoMatrices <<<grids, blocks>>> (matrixSize, matrixA, matrixB);
+	cudaDeviceSynchronize();
+
+	cudaEvent_t startTime, finishTime;
+	float runningTime;
+	cudaEventCreate(&startTime);
+	cudaEventCreate(&finishTime);
+	cudaEventRecord(startTime, 0);
+
+	calculateMultiplyMatrices <<<grids, blocks>>> (matrixSize, matrixA, matrixB, matrixCsrc);
+	cudaDeviceSynchronize();
+	cudaEventRecord(finishTime, 0);
+	cudaEventSynchronize(finishTime);
+
+	if (cudaMemcpy(matrixCdst, matrixCsrc, size, cudaMemcpyDeviceToHost) != cudaSuccess) {
+		cout << "Blad kopiowania wynikow z GPU na CPU" << endl;
+		return 0;
+	}
+
+	cudaFree(matrixA);
+	cudaFree(matrixB);
+	cudaFree(matrixCsrc);
+	free(matrixCdst);
+
+	cudaEventElapsedTime(&runningTime, startTime, finishTime);
+	cout << "Time: " << runningTime * 1000 << "ms" << endl;
+
+	return 0;
+}
